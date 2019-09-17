@@ -1,0 +1,132 @@
+*{
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+ul{
+  padding: 0;
+}
+
+
+.main{
+  background: rgb(187, 186, 186);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* //--------------------------regestration */
+.containerRegestration,
+.containerLogin{
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.containerRegestration input,
+.containerLogin input{
+  display: flex;
+  height: 30px;
+  outline: none;
+  padding-left: 10px;
+}
+
+.conteiner-form form{
+  padding: 10px;
+  border: 1px solid gray;
+}
+.conteiner-form form>div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#submit-registr{
+  display: flex;
+  margin-left: auto;
+}
+.conteiner-form form>div.error{
+  display: flex;
+  justify-content: flex-end;
+  color: red;
+  font-size: 12px;
+  height: 12px;
+  margin-top: -10px;
+}
+/* //--------------------------regestration */
+
+
+
+
+/* //--------------------------header Admin */
+
+.headerIcon{
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.dropdown-list{
+  display: none;
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  top: 100%;
+  right: 0;
+  margin: 0;
+  z-index: 10;
+}
+.dropdown-list>li{
+  border: 1px solid gray;
+}
+.dropdown-list>li>a{
+  padding: 5px;
+  width: 100%;
+}
+.dropdown-list-active{
+  display: block;
+}
+
+/* //--------------------------header Admin */
+
+
+
+
+/* //--------------------------profile */
+.item{
+  margin: 20px auto 0;
+  width: fit-content;
+}
+.container-Photo{
+  width: 500px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-button{
+  margin-top: 20px;
+}
+.container-button button{
+  display: flex;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+/* //--------------------------profile */

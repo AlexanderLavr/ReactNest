@@ -1,0 +1,57 @@
+.modal-admin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-admin .modal-container{
+    width: fit-content;
+    position: relative;
+    background: #fff;
+    border: 2px solid gray;
+    padding: 30px;
+}
+.modal-admin .modal-container h2{
+    margin: 0 5px 20px 0;
+    text-align: center;
+}
+.modal-admin .close-modal{
+    position: absolute;
+    border: 1px solid gray;
+    width: 50px;
+    height: 20px;
+    top: -30px;
+    right: 0px;
+}
+.modal-admin .modal-container input{
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid gray;
+    padding-left: 5px;
+    margin: 5px 15px;
+}
+.modal-admin .save-edit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin: 20px 0 10px;
+    margin-left: auto;
+    width: 100px;
+    height:  30px;
+}
+
+.tableUsers-delete,
+.tableUsers-edit{
+    border: 0;
+    background: #fff;
+    outline: 0;
+}
+#de5{
+    display: none;
+} 
+.tableUsers-delete img,
+.tableUsers-edit img{
+    width: 25px;
+    cursor: pointer;
+}
