@@ -48,7 +48,7 @@ export function loginReducer(state:loginInitialState = initialState, action:any)
           loginSuccess: true,
           loginEmail: objSuccUser.email,
           userIsAdmin: objSuccUser.isAdmin,
-          imageProfile: objSuccUser.imageProfile,//take this with json-server
+          imageProfile: action.imgProfile,//take this with json-server
           idUser: objSuccUser.id//take this with json-server 
         }
       case LoginProc.LOGIN_SUCCESS_ADMIN:
@@ -58,7 +58,7 @@ export function loginReducer(state:loginInitialState = initialState, action:any)
           loginSuccess: true,
           loginEmail: objSuccAdmin.email,
           userIsAdmin: objSuccAdmin.isAdmin,
-          imageProfile: objSuccAdmin.imageProfile,//take this with json-server
+          imageProfile: action.imgProfile,//take this with json-server
           idUser: objSuccAdmin.id//take this with json-server
         }
       case LoginProc.LOGIN_ERROR:

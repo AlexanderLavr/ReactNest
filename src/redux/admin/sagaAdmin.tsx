@@ -8,6 +8,7 @@ import { AdminBooksProc } from '../../redux/admin/adminBooks/actions';
 export function* doAdmin(): IterableIterator<any>{
     yield takeEvery(AdminProc.DO_ADMIN, function*(){
         // get default array users
+    
         let defaultArray = yield call(request, 'http://localhost:4200/users', 'GET')
         if(defaultArray.success){
             let data:[] = defaultArray.data
