@@ -1,0 +1,16 @@
+.container-view-book{
+    display: flex;
+    width: 100%;
+}
+.left-content{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.right-content h1{
+    text-align: left;
+}
+.item-information{
+    text-align: left;
+}

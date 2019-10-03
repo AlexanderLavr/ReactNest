@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../style/viewBook.css';
 import { connect } from 'react-redux';
 
 
@@ -7,15 +8,15 @@ class viewBook extends React.Component<any>{
     render(){
         if(this.props.selectBook.title){
             return(
-                <div style={{display: 'flex', width: '100%'}}>
-                    <div style={{width: '40%', display: 'flex', justifyContent: 'center', marginTop: '20px'}}>
+                <div className="container-view-book">
+                    <div className="left-content">
                         <img src={this.props.selectBook.choosePhoto} alt=""/>
                     </div>
-                    <div>
-                        <h1 style={{textAlign: 'left'}}>{this.props.selectBook.title}</h1>
+                    <div className="right-content">
+                        <h1>{this.props.selectBook.title}</h1>
                         <p>{this.props.selectBook.description}</p>
-                        <p style={{textAlign: 'left'}}>{`Колличество: ${this.props.selectBook.amount} шт.`}</p>
-                        <p style={{textAlign: 'left'}}>{`Цена: ${this.props.selectBook.price}`}</p>
+                        <p className="item-information">{`Колличество: ${this.props.selectBook.amount} шт.`}</p>
+                        <p className="item-information">{`Цена: ${this.props.selectBook.price}`}</p>
                     </div>
                 </div>
             )

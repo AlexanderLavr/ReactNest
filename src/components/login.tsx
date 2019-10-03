@@ -32,7 +32,7 @@ export class Login extends React.Component<any>{
             return <Redirect to='/adminHome' /> 
         }
         return(
-            <div className="containerLogin">
+            <div className="container-login">
                 <h2>LogIn</h2>
                 <div className="conteiner-form">
                     <form>

@@ -31,15 +31,15 @@ ul{
 }
 
 /* //--------------------------regestration */
-.containerRegestration,
-.containerLogin{
+.container-regestration,
+.container-login{
   max-width: 500px;
   width: 100%;
   margin: 0 auto;
 }
 
-.containerRegestration input,
-.containerLogin input{
+.container-regestration input,
+.container-login input{
   display: flex;
   height: 30px;
   outline: none;
@@ -76,7 +76,7 @@ ul{
 
 /* //--------------------------header Admin */
 
-.headerIcon{
+.header-icon{
   width: 30px;
   height: 30px;
   margin-left: 20px;

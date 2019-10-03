@@ -1,15 +1,15 @@
-import { Store, createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './rootReducer';
-import createSagaMiddleware from "redux-saga";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { all } from "redux-saga/effects";
-import { doRegistration } from "./regestration/sagasRegestration";
-import { doLogin } from "./login/sagasLogin";
-import { doHeader } from "./header/sagasHeader";
+import createSagaMiddleware from 'redux-saga';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { all } from 'redux-saga/effects';
+import { doRegistration } from './regestration/sagasRegestration';
+import { doLogin } from './login/sagasLogin';
+import { doHeader } from './header/sagasHeader';
 import { doAdminBooks } from './admin/adminBooks/sagasAdminBooks'; 
-import {saveImage} from './profile/sagasProfile';
-import {doAdmin} from './admin/sagaAdmin';
-import {doUser} from './user/sagasUser';
+import { saveImage } from './profile/sagasProfile';
+import { doAdmin } from './admin/sagaAdmin';
+import { doUser } from './user/sagasUser';
 
 
 export default function configStore(initialState?:any):any{

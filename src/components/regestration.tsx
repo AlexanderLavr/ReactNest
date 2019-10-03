@@ -6,7 +6,7 @@ interface RegistrationState{
     secondname: string,
     email: string,
     password: string,
-    imageProfile: string
+    imageProfile?: string
 } 
 
 const defaultImageProfile:string = 'images/users.svg';
@@ -39,7 +39,7 @@ export class RegistrationComponent extends React.Component<any>{
             return <Redirect to='/adminHome' />
         }
         return(
-            <div className="containerRegestration">
+            <div className="container-regestration">
               <h2>Regestration</h2>
                 <div className="conteiner-form">
                     <form>

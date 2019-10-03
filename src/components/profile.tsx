@@ -1,7 +1,7 @@
 import React from 'react';
 
 export class Profile extends React.Component<any>{
-    state:any={
+    state: any={
         changePhoto: '',
         srcPhoto: ''
     }

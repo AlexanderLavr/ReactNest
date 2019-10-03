@@ -1,7 +1,7 @@
 import { put, takeEvery, call} from "redux-saga/effects";
 import { request } from '../../help/request';
 import { LoginProc } from '../../redux/login/actions';
-import jwtDecode from "jwt-decode";
+import jwtDecode from 'jwt-decode';
     
 export interface loginObj{
     email: string,
@@ -15,7 +15,9 @@ export function* doLogin(): IterableIterator<any>{
             username: loginObj.email,
             password: loginObj.password
         }
+
         let response = yield call(request, 'http://localhost:4200/login', 'POST', user);
+
         if(response.error){ 
             let error = response.error;
             yield put({type: LoginProc.LOGIN_ERROR, error})
@@ -48,7 +50,7 @@ export function* doLogin(): IterableIterator<any>{
             }
             //-----------------------------//work with local
             const selectBooks:[] = [];//create store for books
-            localStorage.setItem('selectBoock', JSON.stringify(selectBooks))
+            localStorage.setItem('selectBooks', JSON.stringify(selectBooks))
             //-----------------------------//work with local
             if(decoded.isAdmin){//admin
                 yield put({type:LoginProc.LOGIN_SUCCESS_ADMIN, decoded, imgProfile});
@@ -63,7 +65,7 @@ export function* doLogin(): IterableIterator<any>{
                 }))
                 arguments[0].history.push('./adminHome');
             }else{//!admin
-                yield put({type:LoginProc.LOGIN_SUCCESS_USER, decoded})
+                yield put({type:LoginProc.LOGIN_SUCCESS_USER, decoded, imgProfile})
                 localStorage.setItem('isAdmin', JSON.stringify(false))
                 localStorage.setItem('user', JSON.stringify({
                     doLogin: true,

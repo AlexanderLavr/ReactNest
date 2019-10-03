@@ -60,7 +60,6 @@ function SimpleTable(props:any) {
               <TableCell align="right">Firstname</TableCell>
               <TableCell align="right">Secondname</TableCell>
               <TableCell align="right">Email</TableCell>
-              <TableCell align="right">Admin</TableCell>
               <TableCell align="right">Edit</TableCell>
               <TableCell align="right">Delete</TableCell>
             </TableRow>
@@ -74,7 +73,6 @@ function SimpleTable(props:any) {
                 <TableCell align="right">{el.firstname}</TableCell>
                 <TableCell align="right">{el.secondname}</TableCell>
                 <TableCell align="right">{el.email}</TableCell>  
-                <TableCell align="right">{`${el.isAdmin}`}</TableCell>
                 <TableCell align="right">
                   <button className="tableUsers-edit" onClick={(e:any)=>{buttonEdit(e, props)}} id={`ed${el.id}`}>
                     <img src={imageEdit} alt=""/> 

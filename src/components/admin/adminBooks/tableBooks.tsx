@@ -158,7 +158,7 @@ const useToolbarStyles = makeStyles((theme: Theme) =>
 
 const EnhancedTableToolbar:React.FC<any> = (props) => {
   const classes = useToolbarStyles();
-  const { numSelected, move , deleteBooks} = props;
+  const { numSelected, deleteBooks} = props;
   return (
     <Toolbar
       className={clsx(classes.root, {

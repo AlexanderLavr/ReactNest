@@ -15,20 +15,19 @@ export function* doAdminBooks(): IterableIterator<any>{
             let data:[] = defaultArrayBooks;
             yield put({type: AdminBooksProc.APDATE_ARRAY_BOOKS, data})
         }else{ 
-            alert(saveBook.message)
+            alert('Server problems!')
         }
     })
 
     yield takeEvery(AdminBooksProc.DO_DELETE_BOOKS, function*(arrDelBooks:any){
         let arrayDelBooks:string[] = arrDelBooks.deleteArrayBooks;
         let deleteBoks =  yield call(request, 'http://localhost:4200/books/deleteBooks', 'DELETE', arrayDelBooks);
-        debugger;
         if(deleteBoks.success){
             let defaultArrayBooks = yield call(request, 'http://localhost:4200/books', 'GET')
             let data:[] = defaultArrayBooks;
             yield put({type: AdminBooksProc.APDATE_ARRAY_BOOKS, data})
         }else{ 
-            alert(deleteBoks.message)
+            alert('Server problems!')
         }
     })
 
@@ -41,7 +40,7 @@ export function* doAdminBooks(): IterableIterator<any>{
             let editBook:{} = takeEditBook.data;
             yield put({type: AdminBooksProc.CHECK_EDIT_BOOK, editBook})
         }else{ 
-            alert(takeEditBook.message)
+            alert('Server problems!')
         }
     })
 
@@ -56,7 +55,7 @@ export function* doAdminBooks(): IterableIterator<any>{
             let data:[] = defaultArrayBooks;
             yield put({type: AdminBooksProc.APDATE_ARRAY_BOOKS, data})
         }else{ 
-            alert(savEditBook.message)
+            alert('Server problems!')
         }
     })
 }

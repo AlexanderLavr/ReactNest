@@ -9,7 +9,6 @@ export function* saveImage(): IterableIterator<any>{
             imageProfile: saveImg.saveImg.img
         }
      
-        // let response = yield call(request, `http://localhost:3000/v1/users/changeProfile/${idUser}`, 'PUT', imageProfile)
         let response = yield call(request, `http://localhost:4200/users/avatar/${idUser}`, 'PUT', imageProfile)
         if(response.success){
             let saveImg:string = response.data;

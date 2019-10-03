@@ -24,7 +24,7 @@ export const matchIs = (selectBooksArr:any, id:string):boolean =>{// add ismatch
             }
         }
     }
-    localStorage.setItem('selectBoock', JSON.stringify(selectBooksArr))
+    localStorage.setItem('selectBooks', JSON.stringify(selectBooksArr))
     return count
 }
 
@@ -53,7 +53,7 @@ export const buttonDelete = (e:any, arr:any):void =>{
             arr.splice(index, 1);
         }
     }
-    localStorage.setItem('selectBoock', JSON.stringify(arr))
+    localStorage.setItem('selectBooks', JSON.stringify(arr))
 }
 export const buttonAdd = (e:any, arr:any):void =>{
     let buttonAdd:HTMLButtonElement = e.target;
@@ -61,10 +61,10 @@ export const buttonAdd = (e:any, arr:any):void =>{
     for(let element of arr){
         if(id === String(element._id)){
             if(element.totalCount === Number(element.amount)){
-                localStorage.setItem('selectBoock', JSON.stringify(arr))
+                localStorage.setItem('selectBooks', JSON.stringify(arr))
             }else{
                 element.totalCount++
-                localStorage.setItem('selectBoock', JSON.stringify(arr))
+                localStorage.setItem('selectBooks', JSON.stringify(arr))
             }
         }
     }
@@ -76,18 +76,18 @@ export const buttonMult = (e:any, arr:any):void =>{
     for(let element of arr){
         if(id ===  String(element._id)){
             if(element.totalCount === 1){
-                localStorage.setItem('selectBoock', JSON.stringify(arr))
+                localStorage.setItem('selectBooks', JSON.stringify(arr))
             }else{
                 element.totalCount--
-                localStorage.setItem('selectBoock', JSON.stringify(arr))
+                localStorage.setItem('selectBooks', JSON.stringify(arr))
             }
         }
     }
 } 
 
 export const getState = ():[] =>{
-    localStorage.getItem(('selectBoock') || '[]')
-    let selectBooksArr:[] = JSON.parse(localStorage.getItem('selectBoock') || '[]');
+    localStorage.getItem(('selectBooks') || '[]')
+    let selectBooksArr:[] = JSON.parse(localStorage.getItem('selectBooks') || '[]');
     return selectBooksArr
 } 
 
