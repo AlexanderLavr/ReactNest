@@ -1,5 +1,5 @@
 export function request(url:string,  method: string, body?: object) {
-    return (fetch(url, {
+    return (fetch(`http://localhost:4200/${url}`, {
         method: method,
         headers: {
             'Content-Type': 'application/json',  

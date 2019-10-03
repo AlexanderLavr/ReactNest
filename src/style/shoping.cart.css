@@ -1,0 +1,26 @@
+.container-shoping-cart{
+    width: fit-content;
+    margin: 40px auto;
+}
+h1{
+    text-align: center;
+}
+.item-cart{
+    display: flex;
+    align-items: center; 
+    margin: 20px;
+}
+.item-cart > button{
+    margin: 20px;
+}
+.item-cart > img{
+    display: inline-block;
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+}
+.item-cart > span{
+    margin-right: 20px;
+    border: solid;
+    padding: 5px;
+}

@@ -1,15 +1,15 @@
 import { createStore, applyMiddleware } from 'redux';
-import rootReducer from './rootReducer';
+import rootReducer from './root.reducer';
 import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { all } from 'redux-saga/effects';
-import { doRegistration } from './regestration/sagasRegestration';
-import { doLogin } from './login/sagasLogin';
-import { doHeader } from './header/sagasHeader';
-import { doAdminBooks } from './admin/adminBooks/sagasAdminBooks'; 
-import { saveImage } from './profile/sagasProfile';
-import { doAdmin } from './admin/sagaAdmin';
-import { doUser } from './user/sagasUser';
+import { doRegistration } from './registration/sagas.registration';
+import { doLogin } from './login/sagas.login';
+import { doHeader } from './header/sagas.header';
+import { doAdminBooks } from './admin/admin.books/sagas.admin.books'; 
+import { saveImage } from './profile/sagas.profile';
+import { doAdmin } from './admin/sagas.admin';
+import { doUser } from './user/sagas.user';
 
 
 export default function configStore(initialState?:any):any{
@@ -24,8 +24,8 @@ export default function configStore(initialState?:any):any{
 
   let m = module as any;
   if (m.hot) {
-    m.hot.accept('./rootReducer', () => {
-      const nextRootReducer = require('./rootReducer').default;
+    m.hot.accept('./root.reducer', () => {
+      const nextRootReducer = require('./root.reducer').default;
       store.replaceReducer(nextRootReducer);
     });
   }
