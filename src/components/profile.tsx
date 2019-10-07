@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { saveImgProfile } from '../redux/header/actions.header';
 
 export class Profile extends React.Component<any>{
     state: any={
@@ -52,3 +54,17 @@ export class Profile extends React.Component<any>{
         )
     }
 }
+
+
+export const mapStateToProps = (state: any):{} => ({
+    email: state.login.email,
+    password: state.password,
+    imageProfile: state.login.imageProfile,
+    idUser: state.login.idUser
+});
+
+
+export default connect(
+    mapStateToProps,
+    { saveImgProfile }
+)(Profile);

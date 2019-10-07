@@ -1,6 +1,10 @@
 import React from 'react';
-import '../../../style/modal.admin.css'
+import './modal.admin.css'
 import Modal from '@material-ui/core/Modal';
+
+import { connect } from 'react-redux';
+import { closeModal, saveEditUser } from '../../../redux/admin/actions.admin';
+
 
 interface AdminModalState {
   id: number,
@@ -43,3 +47,13 @@ export class AdminModal extends React.Component<any,any>{
   } 
 }
 
+const mapStateToProps = (state: any) => ({
+    serverArray: state.admin.serverArray,
+    openAdminModal: state.admin.openAdminModal,
+    editUserServer: state.admin.editUserServer
+  });
+  
+  export default connect(
+    mapStateToProps,
+    { closeModal, saveEditUser }
+  )(AdminModal);

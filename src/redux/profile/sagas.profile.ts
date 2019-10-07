@@ -1,6 +1,7 @@
 import { put, takeEvery, call} from "redux-saga/effects";
 import { request } from '../../help/request';
 import { HeaderProc } from '../header/actions.header';
+import axios from 'axios';
 
 export function* saveImage(): IterableIterator<any>{
     yield takeEvery(HeaderProc.DO_SAVE_PHOTO, function*(saveImg:any){

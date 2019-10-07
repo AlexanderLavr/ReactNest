@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
 import SimpleTable from './admin.users/table.users';
-import EnhancedTable from './admin.books/table.books'
+import EnhancedTable from './admin.books/table.books/table.books'
 
 interface TabPanelProps {
   children?: React.ReactNode;

@@ -1,8 +1,8 @@
 import React from 'react';
-import  '../../style/shoping.cart.css';
+import  './shoping.cart.css';
 import { connect } from 'react-redux';
-import { getState, countTotalPrice, buttonDelete, buttonAdd, buttonMult, countTotalBooks } from '../../actions.components/action.user.home';
-import { countBooks } from '../../redux/user/actions.user';
+import { getState, countTotalPrice, buttonDelete, buttonAdd, buttonMult, countTotalBooks } from '../user.home';
+import { countBooks } from '../../../redux/user/actions.user';
 
 interface stateShopingCart{
     selectBooksArr: []

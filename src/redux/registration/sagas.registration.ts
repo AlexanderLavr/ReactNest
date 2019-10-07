@@ -3,6 +3,7 @@ import { RPr } from './actions.registration';
 import { LoginProc } from '../login/actions.login';
 import { request } from '../../help/request';
 
+
 interface RegisterObj {
     email: string,
     firstname: string,

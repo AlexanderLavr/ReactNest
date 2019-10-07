@@ -1,6 +1,8 @@
 import React from 'react';
-import '../../../style/modal.admin-add.books.css';
+import './modal.admin-add.books.css';
 import Modal from '@material-ui/core/Modal';
+import { connect } from 'react-redux';
+import { closeModalAddBooks, saveNewBook, editBook} from '../../../redux/admin/admin.books/actions.admin.book';
 
 interface AdminModalBooksState {
     title: string,
@@ -11,7 +13,7 @@ interface AdminModalBooksState {
 }
 let defaultBook:string  = 'images/defaultBook.jpg';
 
-export class AdminModalBooks extends React.Component<any,any>{
+class AdminModalBooks extends React.Component<any,any>{
     state:AdminModalBooksState = {
         title: this.props.title,
         price: this.props.price,
@@ -88,3 +90,23 @@ export class AdminModalBooks extends React.Component<any,any>{
         )
     }   
 }
+// import { connect } from 'react-redux';
+// import { AdminModalBooks } from '../containers/admin/admin.books/modal.books';
+// import { closeModalAddBooks, saveNewBook, editBook} from '../redux/admin/admin.books/actions.admin.book';
+
+const mapStateToProps = (state: any):{} => ({  
+    openAdminModalBooks: state.adminBooks.openAdminModalBooks,
+    labelOfModal: state.adminBooks.labelOfModal,
+    title: state.adminBooks.title,
+    price: state.adminBooks.price,
+    description: state.adminBooks.description,
+    amount: state.adminBooks.amount,
+    choosePhoto: state.adminBooks.choosePhoto,
+    idBooks: state.adminBooks.idBooks
+  });
+  
+export default connect(
+    mapStateToProps,
+    { closeModalAddBooks, saveNewBook, editBook}
+  )(AdminModalBooks);
+

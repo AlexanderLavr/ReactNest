@@ -3,15 +3,15 @@ import '../src/style/app.css';
 import { Provider } from 'react-redux';
 import configureStore from './redux/store';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
-import HeaderNav from './actions.components/action.header';
-import Login from './actions.components/action.login';
+import HeaderNav from './components/header';
+import Login from './components/login';
 import Main from './components/main';
-import Regestration from './actions.components/action.regictration';
-import UserHome from './actions.components/action.user.home';
-import AdminHome from './actions.components/action.admin.home';
-import Profile from './actions.components/action.profile';
-import viewBook from './components/user/view.book';
-import shopingCart from './components/user/shoping.cart';
+import Regestration from './components/registration';
+import UserHome from './components/user/user.home';
+import AdminHome from './components/admin/admin.home';
+import Profile from './components/profile';
+import viewBook from './components/user/view.book/view.book';
+import shopingCart from './components/user/shoping.cart/shoping.cart';
 
 
 const store:any = configureStore();

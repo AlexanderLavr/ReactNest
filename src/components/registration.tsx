@@ -1,5 +1,9 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { doRegister } from '../redux/registration/actions.registration';
+
+
 
 interface RegistrationState{
     firstname: string,
@@ -82,5 +86,20 @@ export class RegistrationComponent extends React.Component<any>{
     }
 }
 
+export const mapStateToProps = (state: any):{}=> ({
+    email: state.regestration.email,
+    firstname: state.regestration.firstname,
+    secondname: state.regestration.secondname,
+    password: state.regestration.password,
+    errorFirstname: state.regestration.errorFirstname,
+    errorSecondname: state.regestration.errorSecondname,
+    errorEmail: state.regestration.errorEmail,
+    errorPassword: state.regestration.errorPassword,
+    successRegister: state.regestration.successRegister,
+    error: state.regestration.error
+});
 
-
+export default connect(
+    mapStateToProps,
+    { doRegister }
+)(RegistrationComponent);

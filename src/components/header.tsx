@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import  shopingCart  from '../images/shopping-cart.svg';
 import Badge from '@material-ui/core/Badge';
+import { connect } from 'react-redux';
+import { logOut, localStoreUser } from '../redux/header/actions.header';
 
 interface HeaderNavState {
     active: boolean
@@ -78,4 +80,16 @@ export class HeaderNav extends React.Component<any>{
 }
 
 
+const mapStateToProps = (state: any):{} => ({
+    loginSuc: state.login.loginSuccess,
+    loginEmail: state.login.loginEmail,
+    loginPassword: state.login.loginPassword,
+    userIsAdmin: state.login.userIsAdmin,
+    imageProfile: state.login.imageProfile,
+    countBook: state.userBooks.countBook
+});
 
+export default connect(
+    mapStateToProps,
+    { logOut, localStoreUser}
+)(HeaderNav);

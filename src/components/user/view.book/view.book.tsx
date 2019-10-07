@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../style/view.book.css';
+import './view.book.css';
 import { connect } from 'react-redux';
 
 

@@ -19,13 +19,13 @@ import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { connect } from 'react-redux';
-import '../../../style/table.books.css';
-import AdminModalBooks from '../../../actions.components/action.admin.modal.books'; 
-import imageEdit from '../../../images/editButton.svg'; 
-import { openModaladdBooks, setDeleteArrayBook, deleteBook, getEditBook } from '../../../redux/admin/admin.books/actions.admin.book';
+import './table.books.css';
+import AdminModalBooks from '../modal.books';  
+import imageEdit from '../../../../images/editButton.svg'; 
+import { openModaladdBooks, setDeleteArrayBook, deleteBook, getEditBook } from '../../../../redux/admin/admin.books/actions.admin.book';
 
 interface Data {
-  title: string;
+  title: string; 
   id: string;
   price: string;
   amount: string;

@@ -1,9 +1,11 @@
 import React from 'react';
 import SimpleTabs from './tabs.admin.home';
 import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { queryServer } from '../../redux/admin/actions.admin';
 
 
-export class AdminHome extends React.Component<any>{
+class AdminHome extends React.Component<any>{
   componentDidMount(){
     this.props.queryServer()
   }
@@ -21,5 +23,18 @@ export class AdminHome extends React.Component<any>{
   }
 }
 
+const mapStateToProps = (state: any):{} => ({
+    loginSuc: state.login.loginSuccess,
+    loginEmail: state.login.loginEmail,
+    loginPassword: state.login.loginPassword,
+    userIsAdmin: state.login.userIsAdmin,
+    imageProfile: state.login.imageProfile,
+    serverArray: state.admin.serverArray,
+    openAdminModal: state.admin.openAdminModal,
+    editUserServer: state.admin.editUserServer
+});
 
-
+export default connect(
+    mapStateToProps,
+    { queryServer }
+)(AdminHome);

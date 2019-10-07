@@ -2,7 +2,7 @@ import { put, takeEvery, call} from 'redux-saga/effects';
 import { request } from '../../help/request';
 import { AdminProc } from './actions.admin';
 import { AdminBooksProc } from './admin.books/actions.admin.book';
-    
+
 
 
 export function* doAdmin(): IterableIterator<any>{

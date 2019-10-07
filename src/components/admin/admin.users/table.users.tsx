@@ -8,9 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { connect } from 'react-redux';
 import { deleteUser, editUser } from '../../../redux/admin/actions.admin';
-
-
-import AdminModal from '../../../actions.components/action.admin.modal.users';
+import AdminModal from './modal.users';
 import imageDelete from '../../../images/delete.svg';
 import imageEdit from '../../../images/editButton.svg';
 

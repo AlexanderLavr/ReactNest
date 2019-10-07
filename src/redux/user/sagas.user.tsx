@@ -1,7 +1,8 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
-import { getMatch, matchIs, countTotalBooks } from '../../actions.components/action.user.home';
+import { getMatch, matchIs, countTotalBooks } from '../../components/user/user.home';
 import { UserProc } from './actions.user';
 import { request } from '../../help/request';
+
 
 export function* doUser():IterableIterator<any>{
     yield takeEvery(UserProc.DO_USER, function*(){//start array books
